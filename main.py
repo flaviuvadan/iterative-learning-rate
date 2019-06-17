@@ -4,11 +4,20 @@ import iterative_learning_rate
 
 
 def main():
-    learn_100 = iterative_learning_rate.IterativeLearningRate(0.5, 0.1, 100)
-    x_values_100, y_values_100 = learn_100.learn()
+    learn = iterative_learning_rate.IterativeLearningRate(0.9, 0.1, 100)
+    x, y = learn.learn()
+    plot = iterative_learning_rate.Plot(x, y, 'Learning rate over 100 iterations', 'plot_100')
+    plot.plot()
 
-    plot_100 = iterative_learning_rate.Plot(x_values_100, y_values_100, 'Learning rate over 100 iterations')
-    plot_100.plot()
+    learn = iterative_learning_rate.IterativeLearningRate(0.9, 0.1, 1000)
+    x, y = learn.learn()
+    plot = iterative_learning_rate.Plot(x, y, 'Learning rate over 100 iterations', 'plot_1000')
+    plot.plot()
+
+    learn = iterative_learning_rate.IterativeLearningRate(0.9, 0.1, 10000)
+    x, y = learn.learn()
+    plot = iterative_learning_rate.Plot(x, y, 'Learning rate over 100 iterations', 'plot_10000')
+    plot.plot()
 
 
 main()
