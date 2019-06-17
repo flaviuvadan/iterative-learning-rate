@@ -24,7 +24,6 @@ class Plot:
 
     def plot(self):
         """ Plot the chart using the class' x and y values """
-        print('plotting')
         fig, ax = plt.subplots()
         line = lines.Line2D(self.x_values, self.y_values)
         ax.add_line(line)
