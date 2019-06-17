@@ -20,5 +20,11 @@ class IterativeLearningRate:
         Perform the specified iterations and report the results
         :return: tuple([iteration i], [learning rate at i])
         """
+        x_values = []
+        y_values = []
         for i in range(0, self.iterations):
-            print(i)
+            alpha = i / self.iterations
+            learning_rate = (1 - alpha) * self.initial_learning_rate + alpha * self.final_learning_rate
+            x_values.append(i)
+            y_values.append(learning_rate)
+        return x_values, y_values
